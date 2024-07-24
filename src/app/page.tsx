@@ -8,7 +8,10 @@ export default function Home() {
     alert("Hello, world!");
   };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="bg-current flex min-h-screen flex-col p-24">
+      <div className="">
+        <h1>TESTİNG</h1>
+      </div>
       <Button onClick={handleClick}>Click me</Button>
     </main>
   );
