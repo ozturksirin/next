@@ -5,12 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import Logo from "@/assets/Logo.png";
-import Overview from "@/assets/overview.svg";
-import Task from "@/assets/book.svg";
-import Mentor from "@/assets/user-octagon.svg";
-import Message from "@/assets/message.svg";
-import Settings from "@/assets/setting.svg";
+import Logo from "@/assets/images/Logo.png";
+import Overview from "@/assets/icons/overview.svg";
+import Task from "@/assets/icons/book.svg";
+import Mentor from "@/assets/icons/user-octagon.svg";
+import Message from "@/assets/icons/message.svg";
+import Settings from "@/assets/icons/setting.svg";
+import HelpCenter from "@/assets/images/HelpCenter.png";
+
+import styles from "@/styles/sidebar.module.css";
 
 type Props = {};
 
@@ -27,23 +30,25 @@ const SideBar = (props: Props) => {
   ];
 
   return (
-    <div className="bg-white flex flex-col items-center h-screen gap-10 mt-10">
-      <Image src={Logo} alt="Logo" />
-      <div className="flex flex-col space-y-4">
-        {links.map((link) => (
-          <Link href={link.href} key={link.label} passHref>
-            <div
-              className={`flex gap-3 p-4 rounded-lg ${
-                pathname === link.href ? "bg-active" : ""
-              }`}
-            >
-              <Image src={link.src} alt={link.label} />
-              <p>{link.label}</p>
-            </div>
-          </Link>
-        ))}
+    <>
+      <div className="bg-white flex flex-col items-center h-screen gap-10 mt-10">
+        <Image src={Logo} alt="Logo" />
+        <div className="flex flex-col space-y-4">
+          {links.map((link) => (
+            <Link href={link.href} key={link.label} passHref>
+              <div
+                className={`flex gap-3 p-4 rounded-lg ${
+                  pathname === link.href ? "bg-active" : ""
+                }`}
+              >
+                <Image src={link.src} alt={link.label} />
+                <p>{link.label}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

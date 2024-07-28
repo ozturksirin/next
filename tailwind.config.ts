@@ -18,6 +18,7 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {},
       colors: {
         active: "var(--active-sidebar)",
         border: "hsl(var(--border))",
