@@ -1,4 +1,5 @@
 import { SideBar } from "@/components";
+import Header from "@/components/layout/Header/Header";
 import React from "react";
 
 type Props = {
@@ -7,11 +8,14 @@ type Props = {
 
 const DashboardLayout = ({ children }: Props) => {
   return (
-    <div className="grid grid-cols-12 min-h-screen">
-      <div className="col-span-2">
+    <div className="min-h-screen grid grid-cols-12 grid-rows-[auto_1fr]">
+      <div className="col-span-2 row-span-2">
         <SideBar />
       </div>
-      <div className="col-span-10">{children}</div>
+      <div className="col-span-10">
+        <Header />
+      </div>
+      <div className="col-span-10 bg-background">{children}</div>
     </div>
   );
 };
