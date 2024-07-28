@@ -13,7 +13,7 @@ const Header = (props: Props) => {
   const { title, subTitle, image } = props;
   return (
     <React.Fragment>
-      <div className="flex justify-between py-6">
+      <div className="flex justify-between py-6 items-center">
         <div>
           <p className="text-textXl font-semibold text-boldTitle">{title}</p>
           <p className="text-textBase font-medium	text-[#54577A]">{subTitle}</p>
