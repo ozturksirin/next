@@ -18,13 +18,28 @@ const config = {
       },
     },
     extend: {
+      fontSize: {
+        textXs: "12px",
+        textSm: "14px",
+        textBase: "16px",
+        textLg: "18px",
+        textLg2: "20px",
+        textXl: "24px",
+        textXl2: "32px",
+        text2xl: "36px",
+        text3xl: "40px",
+        text4xl: "72px",
+      },
       backgroundImage: {},
       colors: {
+        boldTitle: "var(--bold-title)",
+        transparent: "transparent",
         active: "var(--active-sidebar)",
+        background: "var(--background)",
+        /*------------------------------*/
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",

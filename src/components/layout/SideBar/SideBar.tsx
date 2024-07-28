@@ -31,8 +31,8 @@ const SideBar = (props: Props) => {
 
   return (
     <>
-      <div className="bg-white flex flex-col items-center h-screen gap-10 mt-10">
-        <Image src={Logo} alt="Logo" />
+      <div className="bg-white flex flex-col items-center h-screen gap-10 ">
+        <Image src={Logo} alt="Logo" className="mt-10" />
         <div className="flex flex-col space-y-4">
           {links.map((link) => (
             <Link href={link.href} key={link.label} passHref>
