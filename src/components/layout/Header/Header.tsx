@@ -3,24 +3,25 @@ import Notification from "@/assets/icons/Notification.svg";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-type Props = {};
+type Props = {
+  title: string;
+  subTitle?: string;
+  image?: string;
+};
 
 const Header = (props: Props) => {
+  const { title, subTitle, image } = props;
   return (
     <React.Fragment>
-      <div className="flex justify-between p-6">
+      <div className="flex justify-between py-6">
         <div>
-          <p className="text-textXl font-semibold text-boldTitle">
-            Hi, Skyler Dias
-          </p>
-          <p className="text-textBase font-medium	text-[#54577A]">
-            Let's finish your task today!
-          </p>
+          <p className="text-textXl font-semibold text-boldTitle">{title}</p>
+          <p className="text-textBase font-medium	text-[#54577A]">{subTitle}</p>
         </div>
         <div className="flex gap-10">
           <Image src={Notification} alt="Notification" />
           <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarImage src={image} alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </div>
