@@ -1,2 +1,3 @@
 import SideBar from "./layout/SideBar/SideBar";
-export { SideBar };
+import TaskCard from "./common/Card/TaskCard";
+export { SideBar, TaskCard };

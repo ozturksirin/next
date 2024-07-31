@@ -1,3 +1,4 @@
+import { TaskCard } from "@/components";
 import React from "react";
 
 type Props = {};
@@ -5,7 +6,9 @@ type Props = {};
 const Dashboard = (props: Props) => {
   return (
     <div>
-      <h1>DASHBOARD</h1>
+      <div className="flex">
+        <TaskCard />
+      </div>
     </div>
   );
 };
