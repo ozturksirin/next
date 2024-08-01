@@ -16,8 +16,8 @@ type Props = {};
 const TaskCard = (props: Props) => {
   const {} = props;
   return (
-    <Card className="flex flex-col rounded-xl	">
-      <CardContent className="flex flex-col pb-0 bg-secondary rounded-lg">
+    <Card className="flex flex-col rounded-lg	bg-secondary pb-0">
+      <CardContent className="flex flex-col">
         <CardHeader>
           <div className="flex flex-col">
             <CardTitle className="text-white">Running Task</CardTitle>
