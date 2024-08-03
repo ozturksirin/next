@@ -20,17 +20,18 @@ const config = {
       },
     },
     extend: {
+      // c stands for custom
       fontSize: {
-        textXs: "12px",
-        textSm: "14px",
-        textBase: "16px",
-        textLg: "18px",
-        textLg2: "20px",
-        textXl: "24px",
-        textXl2: "32px",
-        text2xl: "36px",
-        text3xl: "40px",
-        text4xl: "72px",
+        cXs: "12px",
+        cSm: "14px",
+        cBase: "16px",
+        cLg: "18px",
+        cLg2: "20px",
+        cXl: "24px",
+        cXl2: "32px",
+        c2xl: "36px",
+        c3xl: "40px",
+        c4xl: "72px",
       },
       backgroundImage: {},
       colors: {
