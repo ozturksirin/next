@@ -1,6 +1,12 @@
-import { ActivityLinearCard, MentorsCard, TaskCard } from "@/components";
+import {
+  ActivityLinearCard,
+  MentorsCard,
+  TaskCard,
+  TaskProgresCard,
+} from "@/components";
 import React from "react";
-
+import PersonOne from "@/assets/icons/photo-1.svg";
+import PersonTwo from "@/assets/icons/photo-2.svg";
 type Props = {};
 
 const MentorsMock = [
@@ -27,6 +33,25 @@ const MentorsMock = [
   },
 ];
 
+const TaskMock = [
+  {
+    key: "1",
+    taskTitle: "Creating Mobile App Design",
+    jobTitle: "UI UX Design",
+    progress: 66,
+    daysLeft: "2 ",
+    person: [PersonOne, PersonTwo],
+  },
+  {
+    key: "2",
+    taskTitle: "Creating Perfect Website",
+    jobTitle: "Web Developer",
+    progress: 81,
+    daysLeft: "4 ",
+    person: [PersonTwo, PersonOne],
+  },
+];
+
 const Dashboard = (props: Props) => {
   return (
     <div className="flex flex-col">
@@ -36,7 +61,7 @@ const Dashboard = (props: Props) => {
           <ActivityLinearCard />
         </div>
       </div>
-      <div className="flex mt-4">
+      <div className="flex mt-4 mb-4">
         {MentorsMock.map((mentor) => {
           return (
             <MentorsCard
@@ -48,6 +73,20 @@ const Dashboard = (props: Props) => {
               rate={mentor.rate}
               image={mentor.image}
               follow={mentor.follow}
+            />
+          );
+        })}
+      </div>
+      <div className="flex">
+        {TaskMock.map((task) => {
+          return (
+            <TaskProgresCard
+              key={task.key}
+              taskTitle={task.taskTitle}
+              jobTitle={task.jobTitle}
+              progress={task.progress}
+              daysLeft={task.daysLeft}
+              person={task.person}
             />
           );
         })}
