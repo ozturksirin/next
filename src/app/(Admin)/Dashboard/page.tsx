@@ -63,7 +63,7 @@ const Dashboard = (props: Props) => {
         </div>
       </div>
       <div>
-        <Seperator />
+        <Seperator title="Monthly Mentors" />
 
         <div className="flex mt-4 mb-4">
           {MentorsMock.map((mentor) => {
@@ -84,7 +84,7 @@ const Dashboard = (props: Props) => {
       </div>
 
       <div>
-        <Seperator />
+        <Seperator title="Upcoming Task" />
         <div className="flex">
           {TaskMock.map((task) => {
             return (
