@@ -1,6 +1,7 @@
 import {
   ActivityLinearCard,
   MentorsCard,
+  Seperator,
   TaskCard,
   TaskProgresCard,
 } from "@/components";
@@ -61,35 +62,43 @@ const Dashboard = (props: Props) => {
           <ActivityLinearCard />
         </div>
       </div>
-      <div className="flex mt-4 mb-4">
-        {MentorsMock.map((mentor) => {
-          return (
-            <MentorsCard
-              key={mentor.key}
-              name={mentor.name}
-              job={mentor.job}
-              task={mentor.task}
-              reviews={mentor.reviews}
-              rate={mentor.rate}
-              image={mentor.image}
-              follow={mentor.follow}
-            />
-          );
-        })}
+      <div>
+        <Seperator title="Monthly Mentors" />
+
+        <div className="flex mt-4 mb-4">
+          {MentorsMock.map((mentor) => {
+            return (
+              <MentorsCard
+                key={mentor.key}
+                name={mentor.name}
+                job={mentor.job}
+                task={mentor.task}
+                reviews={mentor.reviews}
+                rate={mentor.rate}
+                image={mentor.image}
+                follow={mentor.follow}
+              />
+            );
+          })}
+        </div>
       </div>
-      <div className="flex">
-        {TaskMock.map((task) => {
-          return (
-            <TaskProgresCard
-              key={task.key}
-              taskTitle={task.taskTitle}
-              jobTitle={task.jobTitle}
-              progress={task.progress}
-              daysLeft={task.daysLeft}
-              person={task.person}
-            />
-          );
-        })}
+
+      <div>
+        <Seperator title="Upcoming Task" />
+        <div className="flex">
+          {TaskMock.map((task) => {
+            return (
+              <TaskProgresCard
+                key={task.key}
+                taskTitle={task.taskTitle}
+                jobTitle={task.jobTitle}
+                progress={task.progress}
+                daysLeft={task.daysLeft}
+                person={task.person}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
