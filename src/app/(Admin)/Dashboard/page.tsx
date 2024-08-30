@@ -41,6 +41,7 @@ const TaskMock = [
     jobTitle: "UI UX Design",
     progress: 66,
     daysLeft: "2 ",
+    image: "/task-image.png",
     person: [PersonOne, PersonTwo],
   },
   {
@@ -49,6 +50,7 @@ const TaskMock = [
     jobTitle: "Web Developer",
     progress: 81,
     daysLeft: "4 ",
+    image: "/task-image.png",
     person: [PersonTwo, PersonOne],
   },
 ];
@@ -94,6 +96,7 @@ const Dashboard = (props: Props) => {
                 jobTitle={task.jobTitle}
                 progress={task.progress}
                 daysLeft={task.daysLeft}
+                image={task.image}
                 person={task.person}
               />
             );
