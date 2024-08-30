@@ -8,7 +8,6 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import Image from "next/image";
-import Task from "@/assets/images/task-image.png";
 import { Progress } from "@/components/ui/progress";
 import Timer from "@/assets/icons/time-circle.svg";
 
@@ -18,16 +17,17 @@ type Props = {
   progress?: number;
   daysLeft?: string;
   person?: string[];
+  image: string;
 };
 
 const TaskProgresCard = (props: Props) => {
-  const { taskTitle, jobTitle, progress, daysLeft, person } = props;
+  const { taskTitle, jobTitle, progress, daysLeft, person, image } = props;
 
   return (
     <React.Fragment>
       <Card className="bg-white rounded-lg max-w-80	border-none mr-8">
         <CardHeader>
-          <Image src={Task} alt="task" width={280} height={110} />
+          <Image src={image} alt={image} width={280} height={110} />
           <div className="pt-2">
             <p className="text-boldTitle font-semibold text-base ">
               {taskTitle}
