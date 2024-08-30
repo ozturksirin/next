@@ -10,31 +10,18 @@ const page = (props: Props) => {
   return (
     <div>
       <div>Search Input</div>
-      <div>
-        <Seperator
-          title="Time Limit"
-          children={
-            <div className="flex">
-              {timeLimit.map((task) => {
-                return (
-                  <TaskProgresCard
-                    key={task.key}
-                    taskTitle={task.taskTitle}
-                    jobTitle={task.jobTitle}
-                    progress={task.progress}
-                    daysLeft={task.daysLeft}
-                    person={
-                      task.person?.map((person) => {
-                        return person;
-                      }) || []
-                    }
-                  />
-                );
-              })}
-            </div>
-          }
-        />
-      </div>
+      <Seperator title="Time Limit">
+        {timeLimit.map((task) => (
+          <TaskProgresCard
+            key={task.key}
+            taskTitle={task.taskTitle}
+            jobTitle={task.jobTitle}
+            progress={task.progress}
+            daysLeft={task.daysLeft}
+            person={task.person?.map((person) => person) || []}
+          />
+        ))}
+      </Seperator>
     </div>
   );
 };
