@@ -6,23 +6,26 @@ import React, { useEffect } from "react";
 
 type Props = {
   children: React.ReactNode;
+  overviewChildren?: React.ReactNode;
 };
 
-const DashboardLayout = ({ children }: Props) => {
+const uri = "https://avatars.githubusercontent.com/u/92751534?v=4";
+
+const DashboardLayout = (props: Props) => {
+  const { children, overviewChildren } = props;
   const pathname = usePathname();
   const user: string = "Skylar Dias";
 
   const handlerouteName = () => {
-    if (pathname === "/Dashboard") {
-      return `Hi, ${user}`;
-    }
-    if (pathname === "/Task") {
-      return "Explore Task";
-    }
-    if (pathname === "/Mentors") {
-      return "Explore Mentors";
-    } else {
-      return pathname.replace("/", "");
+    switch (pathname) {
+      case "/Dashboard":
+        return `Hi, ${user}`;
+      case "/Task":
+        return "Explore Task";
+      case "/Mentors":
+        return "Explore Mentors";
+      default:
+        return pathname.replace("/", "");
     }
   };
 
@@ -30,6 +33,7 @@ const DashboardLayout = ({ children }: Props) => {
     if (pathname === "/Dashboard") {
       return `Let's finish your task today!`;
     }
+    return "";
   };
 
   useEffect(() => {
@@ -41,16 +45,34 @@ const DashboardLayout = ({ children }: Props) => {
       <div className="col-span-2 row-span-2">
         <SideBar />
       </div>
-      <div className="col-span-10 px-6">
-        <Header
-          title={handlerouteName()}
-          subTitle={handleSubTitle()}
-          image="https://github.com/shadcn.png"
-        />
-      </div>
-      <div className="col-span-10 bg-background px-6">{children}</div>
+      {pathname === "/Dashboard" ? (
+        <>
+          <div className="col-span-7 px-6">
+            <Header
+              title={handlerouteName()}
+              subTitle={handleSubTitle()}
+              image={uri}
+            />
+            <div className="bg-background mt-6">{children}</div>
+          </div>
+
+          <div className="col-span-5 px-8">
+            <div className="p-4 bg-background h-full">{overviewChildren}</div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="col-span-10 px-6">
+            <Header
+              title={handlerouteName()}
+              subTitle={handleSubTitle()}
+              image={uri}
+            />
+          </div>
+          <div className="col-span-10 bg-background px-6">{children}</div>
+        </>
+      )}
     </div>
   );
 };
-
 export default DashboardLayout;
